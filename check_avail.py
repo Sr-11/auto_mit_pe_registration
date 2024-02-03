@@ -8,8 +8,9 @@ import itertools
 pd.options.mode.chained_assignment = None  # default='warn'
 est_timezone = pytz.timezone('US/Eastern')
 
-cookies = browser_cookie3.chrome(domain_name='.mit.edu')
-headers = {}
+# cookies = browser_cookie3.chrome(domain_name='.mit.edu')
+cookies = browser_cookie3.chrome(domain_name='eduapps.mit.edu')
+headers = {'Accept-Encoding': 'gzip'}
 # url = "https://eduapps.mit.edu/mitpe/student/registration/sectionList?filter=open&termId=" # only view open classes
 url = "https://eduapps.mit.edu/mitpe/student/registration/sectionList?filter=all&termId="
 
@@ -48,5 +49,3 @@ for i in itertools.count():
     stdscr.clear()
     stdscr.addstr(0, 0, output)
     stdscr.refresh()
-
-    # time.sleep(1)
